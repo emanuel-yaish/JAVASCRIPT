@@ -1,6 +1,7 @@
 function getDayOfTheWeek(numDay) {
   const weekdays = [
     "Sunday",
+    "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
@@ -30,10 +31,11 @@ function getCurrentMonthName(currentMonthNum) {
 
 function getTodayDate() {
   const currentDate = new Date();
-  let currentDay = getDayOfTheWeek(currentDate.getDay());
-  let currentDayOfTheMonth = currentDate.getDate();
-  let currentMonth = getCurrentMonthName(currentDate.getMonth());
-  let year = currentDate.getFullYear();
+  const currentDay = getDayOfTheWeek(currentDate.getDay());
+  const currentDayOfTheMonth = currentDate.getDate();
+  const currentMonth = getCurrentMonthName(currentDate.getMonth());
+  const year = currentDate.getFullYear();
+
   return `Today is ${currentDay} the ${currentDayOfTheMonth} of ${currentMonth}, ${year}`;
 }
 
