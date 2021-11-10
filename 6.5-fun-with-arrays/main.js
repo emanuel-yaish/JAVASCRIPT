@@ -12,7 +12,7 @@ console.log(sameOneHundredObj);
 
 // 2. Create an array with numbers ranging from 1-100 using
 // the Array.from method.
-const numbersRangingArr = Array.from(sameOneHundredObj, (_, index) => index);
+const numbersRangingArr = Array.from(Array(100), (_, index) => index + 1);
 console.log(numbersRangingArr);
 
 // 3. Convert only values of an object into one array.
