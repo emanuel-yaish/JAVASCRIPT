@@ -1,5 +1,13 @@
 function steps(n) {
-  for (let index = 1; index <= n; index++) console.log("#".repeat(index));
+  const step = Array(n);
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      if (j <= i) step[j] = "#";
+      else step[j] = " ";
+    }
+    console.log(`${step.join("")}`);
+  }
 }
 
-steps(2);
+steps(3);
+steps(4);
