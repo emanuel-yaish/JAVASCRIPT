@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Header</h1>
+    <p>Paragraph</p>
+    <a href="#">link</a>
+    <img src="" alt="" />
+    <div class="x">Div with a class</div>
+    <div id="y">Div with an id</div>
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+</body>
+<script>
+    // 1
+    const header = document.getElementsByTagName("h1");
+    const p = document.getElementsByTagName("p");
+    const a = document.getElementsByTagName("a");
+    const x = document.getElementsByClassName("x");
+    const y = document.getElementById("y");
+    const inputs = document.getElementsByTagName("input");
+    console.log("header", header[0]);
+    console.log("p", p[0]);
+    console.log("a", a[0]);
+    console.log("x", x[0]);
+    console.log("y", y);
+    console.log("inputs", inputs);
+
+    // 2
+    console.log("---------- querySelector -----------------");
+    const qHeader = document.querySelector("h1");
+    const qP = document.querySelector("p");
+    const qA = document.querySelector("a");
+    const qX = document.querySelector(".x");
+    const qY = document.querySelector("#y");
+    const qInputs = document.querySelectorAll("input");
+    console.log("header", qHeader);
+    console.log("p", qP);
+    console.log("a", qA);
+    console.log("x", qX);
+    console.log("y", qY);
+    console.log("inputs", qInputs);
+
+    // 3 
+    // by query selector all
+    const querySelecotrAllInputs = document.querySelectorAll("input");
+    querySelecotrAllInputs.forEach(input => console.log(input));
+
+    // by tag name
+    console.log("by tag name after convert to array");
+    const tagNameInputs = document.getElementsByTagName("input");
+    const inputsArr = [...tagNameInputs]
+    inputsArr.forEach(x => console.log(x));
+
+
+</script>
+
+</html>
