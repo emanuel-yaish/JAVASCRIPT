@@ -50,12 +50,6 @@ inputArr.forEach((input) => {
     }
 
     checkValidation();
-
-    //   const selection = window.getSelection();
-    //   if (!selection.rangeCount) return false;
-    //   selection.deleteFromDocument();
-    //   selection.getRangeAt(0).insertNode(document.createTextNode(paste));
-
     event.preventDefault();
   });
 });
@@ -79,5 +73,3 @@ document.body.addEventListener("keyup", (e) => {
   // focus next item
   focusNextItem(activeElement);
 });
-
-// code
