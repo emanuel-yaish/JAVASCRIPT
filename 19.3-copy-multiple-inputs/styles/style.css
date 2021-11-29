@@ -1,0 +1,45 @@
+body {
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.varify-container {
+  border: 5px solid black;
+  height: 30vh;
+  padding: 10vh;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+}
+
+.input-container input {
+  width: 5vw;
+  height: 10vh;
+  margin: 1rem;
+  font-size: 3rem;
+  border-width: 0.3rem;
+  text-align: center;
+}
+
+.verify-btn {
+  margin-top: 5vh;
+  height: 5vh;
+  width: 5vw;
+  color: white;
+  background-color: black;
+  font-weight: 700;
+  border-color: white;
+  box-shadow: 2px 4px 8px black;
+}
+
+input:focus {
+  background-color: lightskyblue;
+}
