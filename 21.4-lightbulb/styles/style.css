@@ -1,0 +1,25 @@
+img {
+  width: 20vw;
+  height: 40vh;
+  filter: saturate(1);
+}
+
+.off {
+  filter: saturate(0);
+}
+
+.page-container {
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.toggle-light {
+  margin-top: 2vh;
+  background-color: blueviolet;
+  padding: 1vh 1.5vw;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 2px 4px 8px black;
+}
