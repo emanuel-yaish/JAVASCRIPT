@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>forms</title>
+    <script src="scripts/index.js" defer></script>
+</head>
+
+<body>
+    <div class="page-container">
+        <form class="user-form">
+            <div>
+                <label for="user-name">Name:</label><br>
+                <input id="user-name" name="user-name" type="text" placeholder="Please enter your user-name">
+            </div>
+            <div>
+                <label for="age">Age:</label><br>
+                <input type="number" placeholder="Please enter your age" id="age" name="age">
+            </div>
+            <div>
+                <label for="email">Email:</label><br>
+                <input name="email" id="email" type="email" placeholder="Please enter your email">
+            </div>
+            <div>
+                <input class="submit-form-button" type="submit" value="submit">
+            </div>
+        </form>
+
+        <div id="modal" class="modal-background">
+            <div class="modal-content">
+                <div class="modal-content-container">
+                    <div class="modal-user-values">
+                        <p class="modal-content-name"></p>
+                        <p class="modal-content-age"></p>
+                        <p class="modal-content-mail"></p>
+                    </div>
+                    <div class="modal-btn-container">
+                        <input class="modal-btn modal-btn-accept" type="button" value="accept">
+                        <input class=" modal-btn modal-btn-decline" type="button" value="decline">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
