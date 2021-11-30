@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+}
+
+input {
+  width: 5rem;
+  height: 5rem;
+  display: block;
+  margin: 2rem auto;
+}
+
+img {
+  display: none;
+}
+
+.checkbox-input:checked + img {
+  display: block;
+  margin: 0 auto;
+}
