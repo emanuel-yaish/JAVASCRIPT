@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+p,
+input {
+  margin: 1rem;
+}
+
+.my-letter {
+  border: 3px solid black;
+  padding: 1rem;
+}
