@@ -1,13 +1,20 @@
 const button = document.querySelector("#smileys-submit");
-const submitBtnEl = document.querySelector("#smileys-input");
-// const textInputEl = document.querySelectorAll("input")[0].value;
+const smilesinput = document.querySelector("#smileys-input");
+const smilesContainer = document.querySelector(".smileys-container");
 
-const buttonInput = document.querySelector("[type='text']");
-console.log(buttonInput);
+button.addEventListener("click", function () {
+  console.log();
+  if (/^\d+$/.test(smilesinput.value) === false) {
+    smilesContainer.innerHTML = "not a number";
+    return;
+  }
+  smilesContainer.innerHTML = "";
+  for (let index = 0; index < smilesinput.value; index++) {
+    const smiley = document.createElement("img");
+    smiley.src = "./assets/img/smiley.jpg";
+    smiley.alt = "smiley";
 
-// console.log(submitBtnEl, textInputEl);
-const smileysContainer = document.createElement("div");
-
-document.addEventListener("click", function () {
-  console.log("clicked");
+    smilesContainer.append(smiley);
+  }
+  smilesinput.value = "";
 });
