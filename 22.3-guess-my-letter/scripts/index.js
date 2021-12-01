@@ -1,14 +1,29 @@
-keyGuessedElement = document.querySelector(".keys-guessed");
-userMessage = document.querySelector(".user-message");
+const keyGuessedElement = document.querySelector(".keys-guessed");
+const userMessage = document.querySelector(".user-message");
+const playAgain = document.querySelector(".play-again");
+const letterContainer = document.querySelector(".my-letter");
 
-const letters = [];
-let characters = "abcdefghijklmnopqrstuvwxyz";
-let randomLetter = characters.charAt(
-  Math.floor(Math.random() * characters.length)
-);
-console.log("random", randomLetter);
+const characters = "abcdefghijklmnopqrstuvwxyz";
+let letters = [];
+let randomLetter;
 
-document.body.addEventListener("keypress", (e) => {
+function initGame() {
+  document.body.addEventListener("keypress", (e) => guessAtempt(e));
+  randomLetter = characters.charAt(
+    Math.floor(Math.random() * characters.length)
+  );
+  letters = [];
+  keyGuessedElement.textContent = "";
+  userMessage.classList.toggle("red");
+  userMessage.textContent = "";
+  letterContainer.textContent = "?";
+  playAgain.style.display = "none";
+  console.log(randomLetter);
+}
+
+initGame();
+
+function guessAtempt(e) {
   const userInputGuess = e.key.toLocaleLowerCase();
   console.log("guess", userInputGuess);
   if (!characters.includes(userInputGuess)) {
@@ -16,11 +31,12 @@ document.body.addEventListener("keypress", (e) => {
     return;
   }
 
-  console.log(userInputGuess);
-  console.log(randomLetter);
-
   if (userInputGuess === randomLetter) {
     userMessage.textContent = "right letter";
+    userMessage.classList.toggle("red");
+    playAgain.style.display = "block";
+    letterContainer.textContent = randomLetter;
+    document.body.removeEventListener("keypress", guessAtempt);
     return;
   }
 
@@ -32,32 +48,8 @@ document.body.addEventListener("keypress", (e) => {
   userMessage.textContent = "Nope, wrong letter";
   letters.push(userInputGuess);
   keyGuessedElement.textContent = letters.join(",");
+}
+
+playAgain.addEventListener("click", () => {
+  initGame();
 });
-
-function resetGame() {}
-// modalAccept.addEventListener("click", () => {
-//   modalUserValues.textContent = "succsess";
-//   modaldecline.value = "close";
-//   modalAccept.style.display = "none";
-// });
-
-// modaldecline.addEventListener("click", () => {
-//   modal.style.display = "none";
-// });
-
-// for (let input of [userName, userAge, userEmail])
-//   input.addEventListener("change", ({ target }) => {
-//     console.log(target.value);
-//     const { name, value } = target;
-//     console.log(value);
-//     formData[name] = value;
-//   });
-
-// buttonElement.addEventListener("click", ({ target }) => {
-//   {
-//     modalEmail.textContent = formData["email"];
-//     modalAge.textContent = formData["age"];
-//     modalname.textContent = formData["user-name"];
-//     modal.style.display = "flex";
-//   }
-// });
