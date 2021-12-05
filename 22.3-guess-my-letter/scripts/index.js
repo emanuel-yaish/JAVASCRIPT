@@ -8,7 +8,7 @@ let letters = [];
 let randomLetter;
 
 function initGame() {
-  document.body.addEventListener("keypress", (e) => guessAtempt(e));
+  document.body.addEventListener("keypress", guessAtempt);
   randomLetter = characters.charAt(
     Math.floor(Math.random() * characters.length)
   );
@@ -18,7 +18,6 @@ function initGame() {
   userMessage.textContent = "";
   letterContainer.textContent = "?";
   playAgain.style.display = "none";
-  console.log(randomLetter);
 }
 
 initGame();
