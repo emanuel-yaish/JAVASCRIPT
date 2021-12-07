@@ -1,26 +1,12 @@
 const makeAllCaps = (array) => {
   return new Promise((resolve, reject) => {
     const res = array.map((word) => {
-      console.log("start of map");
-
       if (typeof word !== "string") {
-        console.log("if reject");
-        reject("Error - array should contains anything but strings");
-        console.log("after reject");
+        return reject("Error - array should contains anything but strings");
       }
-      console.log("outside if");
-      // throw new Error("My error");
-      try {
-        const result = word.toUpperCase();
-        return result;
-      } catch (error) {
-        console.log("We are in catch");
-      }
-
-      return "a";
+      return (result = word.toUpperCase());
     });
-    throw new Error("My error");
-    console.log("We are resolving");
+
     resolve(res);
   });
 };
@@ -32,12 +18,15 @@ const sortWords = (array) => {
   });
 };
 
-const array = ["hey", 2, 3, 4, 5];
+function capitilizeAndSort(array) {
+  makeAllCaps(array)
+    .then(sortWords)
+    .then((sortedArray) => console.log(sortedArray))
+    .catch((error) => console.log("catch", error));
+}
 
-makeAllCaps(array)
-  .then(sortWords)
-  .then((value) => console.log(value))
-  .catch((error) => console.log("catch", error));
-// console.log("sortedArray", sortedArray);
+let array = ["this", "sentence", "is", "going", "to", "be", "sorted"];
+capitilizeAndSort(array);
 
-// console.log(sortedArray);
+array = ["this", "sentence", "is", "going", "to", "be", "sorted", "hey", 2, 3];
+capitilizeAndSort(array);
