@@ -2,8 +2,6 @@ const titleElement = document.querySelector(".joke-title");
 const jokeElement = document.querySelector(".joke");
 const buttonElement = document.querySelector(".joke-button");
 
-console.log("button", buttonElement);
-
 buttonElement.addEventListener("click", generateJoke);
 
 function generateJoke() {
